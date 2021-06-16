@@ -1,197 +1,469 @@
-Prefix(:=<http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#>)
-Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
-Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
-Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
-Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
-Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
-
-
-Ontology(<http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21>
-
-Declaration(Class(:Barbaresco))
-Declaration(Class(:Barolo))
-Declaration(Class(:Canaiolo))
-Declaration(Class(:Chablis_wine))
-Declaration(Class(:Chardonnay))
-Declaration(Class(:Chianti_wine))
-Declaration(Class(:French_wine))
-Declaration(Class(:Italian_wine))
-Declaration(Class(:Malvasia_bianca))
-Declaration(Class(:Nebbiolo))
-Declaration(Class(:Sangiovesse))
-Declaration(Class(:Zinfandel))
-Declaration(Class(:color))
-Declaration(Class(:red))
-Declaration(Class(:red_wine))
-Declaration(Class(:region))
-Declaration(Class(:rose))
-Declaration(Class(:varietal))
-Declaration(Class(:white))
-Declaration(Class(:white_wine))
-Declaration(Class(:wine))
-Declaration(ObjectProperty(:grown_in))
-Declaration(ObjectProperty(:has_color))
-Declaration(ObjectProperty(:made_from))
-Declaration(ObjectProperty(:region_of))
-Declaration(DataProperty(:year))
-Declaration(NamedIndividual(:Barolo_Villero_2015))
-Declaration(NamedIndividual(:Burgundy))
-Declaration(NamedIndividual(:Chablis))
-Declaration(NamedIndividual(:Chianti))
-Declaration(NamedIndividual(:France))
-Declaration(NamedIndividual(:Italy))
-Declaration(NamedIndividual(:Piedmont))
-Declaration(NamedIndividual(:Puglia))
-Declaration(AnnotationProperty(:also_called))
-############################
-#   Annotation Properties
-############################
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#"
+     xml:base="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21"/>
+    
 
-# Annotation Property: :also_called (:also_called)
 
-AnnotationAssertion(rdfs:comment :also_called "Primitivo")
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
+    
 
-############################
-#   Object Properties
-############################
 
-# Object Property: :region_of (:region_of)
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#also_called -->
 
-TransitiveObjectProperty(:region_of)
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#also_called">
+        <rdfs:comment>Primitivo</rdfs:comment>
+    </owl:AnnotationProperty>
+    
 
 
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
+    
 
-############################
-#   Classes
-############################
 
-# Class: :Barbaresco (:Barbaresco)
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#grown_in -->
 
-SubClassOf(:Barbaresco :wine)
-SubClassOf(:Barbaresco ObjectSomeValuesFrom(:has_color :red))
-SubClassOf(:Barbaresco ObjectSomeValuesFrom(:made_from :Nebbiolo))
-SubClassOf(:Barbaresco ObjectHasValue(:grown_in :Piedmont))
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#grown_in">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#grown_in"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#region_of"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#has_color -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#has_color"/>
+    
+
+
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#made_from -->
 
-# Class: :Barolo (:Barolo)
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#made_from"/>
+    
 
-SubClassOf(:Barolo :wine)
-SubClassOf(:Barolo ObjectSomeValuesFrom(:has_color :red))
-SubClassOf(:Barolo ObjectSomeValuesFrom(:made_from :Nebbiolo))
-SubClassOf(:Barolo ObjectHasValue(:grown_in :Piedmont))
 
-# Class: :Canaiolo (:Canaiolo)
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#region_of -->
 
-SubClassOf(:Canaiolo :varietal)
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#region_of">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#year -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#year"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Barbaresco -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Barbaresco">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#wine"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#has_color"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#red"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#made_from"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Nebbiolo"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#grown_in"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Piedmont"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Barolo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Barolo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#wine"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#has_color"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#red"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#made_from"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Nebbiolo"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#grown_in"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Piedmont"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Canaiolo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Canaiolo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#varietal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Chablis_wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Chablis_wine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#wine"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#has_color"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#white"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#made_from"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Chardonnay"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#grown_in"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Chablis"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Chardonnay -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Chardonnay">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#varietal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Chianti_wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Chianti_wine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#wine"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#has_color"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#red"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#made_from"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Canaiolo"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#made_from"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Malvasia_bianca"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#made_from"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Sangiovesse"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#grown_in"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Chianti"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#French_wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#French_wine">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#wine"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#grown_in"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#France"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Italian_wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Italian_wine">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#wine"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#grown_in"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Italy"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Malvasia_bianca -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Malvasia_bianca">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#varietal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Nebbiolo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Nebbiolo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#varietal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Sangiovesse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Sangiovesse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#varietal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Zinfandel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Zinfandel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#varietal"/>
+        <also_called>Primitivo</also_called>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#color -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#color"/>
+    
+
+
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#red -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#red">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#color"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#red_wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#red_wine">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#wine"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#has_color"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#red"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#region -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#region"/>
+    
+
+
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#rose -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#rose">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#color"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#varietal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#varietal"/>
+    
+
+
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#white -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#white">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#color"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#white_wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#white_wine">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#wine"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#has_color"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#white"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
 
-# Class: :Chablis_wine (:Chablis_wine)
 
-SubClassOf(:Chablis_wine :wine)
-SubClassOf(:Chablis_wine ObjectSomeValuesFrom(:has_color :white))
-SubClassOf(:Chablis_wine ObjectSomeValuesFrom(:made_from :Chardonnay))
-SubClassOf(:Chablis_wine ObjectHasValue(:grown_in :Chablis))
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#wine -->
 
-# Class: :Chardonnay (:Chardonnay)
+    <owl:Class rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#wine"/>
+    
 
-SubClassOf(:Chardonnay :varietal)
 
-# Class: :Chianti_wine (:Chianti_wine)
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-SubClassOf(:Chianti_wine :wine)
-SubClassOf(:Chianti_wine ObjectSomeValuesFrom(:has_color :red))
-SubClassOf(:Chianti_wine ObjectSomeValuesFrom(:made_from :Canaiolo))
-SubClassOf(:Chianti_wine ObjectSomeValuesFrom(:made_from :Malvasia_bianca))
-SubClassOf(:Chianti_wine ObjectSomeValuesFrom(:made_from :Sangiovesse))
-SubClassOf(:Chianti_wine ObjectHasValue(:grown_in :Chianti))
+    
 
-# Class: :French_wine (:French_wine)
 
-EquivalentClasses(:French_wine ObjectIntersectionOf(:wine ObjectHasValue(:grown_in :France)))
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Barolo_Villero_2015 -->
 
-# Class: :Italian_wine (:Italian_wine)
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Barolo_Villero_2015">
+        <rdf:type rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Barolo"/>
+        <year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2015</year>
+    </owl:NamedIndividual>
+    
 
-EquivalentClasses(:Italian_wine ObjectIntersectionOf(:wine ObjectHasValue(:grown_in :Italy)))
 
-# Class: :Malvasia_bianca (:Malvasia_bianca)
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Burgundy -->
 
-SubClassOf(:Malvasia_bianca :varietal)
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Burgundy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#region"/>
+        <region_of rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#France"/>
+    </owl:NamedIndividual>
+    
 
-# Class: :Nebbiolo (:Nebbiolo)
 
-SubClassOf(:Nebbiolo :varietal)
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Chablis -->
 
-# Class: :Sangiovesse (:Sangiovesse)
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Chablis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#region"/>
+        <region_of rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Burgundy"/>
+    </owl:NamedIndividual>
+    
 
-SubClassOf(:Sangiovesse :varietal)
 
-# Class: :Zinfandel (:Zinfandel)
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Chianti -->
 
-AnnotationAssertion(:also_called :Zinfandel "Primitivo")
-SubClassOf(:Zinfandel :varietal)
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Chianti">
+        <region_of rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Italy"/>
+    </owl:NamedIndividual>
+    
 
-# Class: :red (:red)
 
-SubClassOf(:red :color)
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#France -->
 
-# Class: :red_wine (:red_wine)
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#France">
+        <rdf:type rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#region"/>
+    </owl:NamedIndividual>
+    
 
-EquivalentClasses(:red_wine ObjectIntersectionOf(:wine ObjectSomeValuesFrom(:has_color :red)))
 
-# Class: :rose (:rose)
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Italy -->
 
-SubClassOf(:rose :color)
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Italy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#region"/>
+    </owl:NamedIndividual>
+    
 
-# Class: :white (:white)
 
-SubClassOf(:white :color)
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Piedmont -->
 
-# Class: :white_wine (:white_wine)
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Piedmont">
+        <rdf:type rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#region"/>
+        <region_of rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Italy"/>
+    </owl:NamedIndividual>
+    
 
-EquivalentClasses(:white_wine ObjectIntersectionOf(:wine ObjectSomeValuesFrom(:has_color :white)))
 
+    <!-- http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Puglia -->
 
-############################
-#   Named Individuals
-############################
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Puglia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#region"/>
+        <region_of rdf:resource="http://www.semanticweb.org/davidos/ontologies/2020/9/untitled-ontology-21#Italy"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
 
-# Individual: :Barolo_Villero_2015 (:Barolo_Villero_2015)
 
-ClassAssertion(:Barolo :Barolo_Villero_2015)
-DataPropertyAssertion(:year :Barolo_Villero_2015 "2015"^^xsd:integer)
 
-# Individual: :Burgundy (:Burgundy)
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
 
-ClassAssertion(:region :Burgundy)
-ObjectPropertyAssertion(:region_of :Burgundy :France)
-
-# Individual: :Chablis (:Chablis)
-
-ClassAssertion(:region :Chablis)
-ObjectPropertyAssertion(:region_of :Chablis :Burgundy)
-
-# Individual: :Chianti (:Chianti)
-
-ObjectPropertyAssertion(:region_of :Chianti :Italy)
-
-# Individual: :France (:France)
-
-ClassAssertion(:region :France)
-
-# Individual: :Italy (:Italy)
-
-ClassAssertion(:region :Italy)
-
-# Individual: :Piedmont (:Piedmont)
-
-ClassAssertion(:region :Piedmont)
-ObjectPropertyAssertion(:region_of :Piedmont :Italy)
-
-# Individual: :Puglia (:Puglia)
-
-ClassAssertion(:region :Puglia)
-ObjectPropertyAssertion(:region_of :Puglia :Italy)
-
-
-SubObjectPropertyOf(ObjectPropertyChain(:grown_in :region_of) :grown_in)
-)
