@@ -38,4 +38,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run test script
-        run: python -m unittest wine_tests.py
+        run: python -m unittest cms_exercises/wine_tests.py
