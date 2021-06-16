@@ -11,3 +11,4 @@ The test file, [wine_tests.py](wine_tests.py), uses `unittest` to test each quer
 ```
 python -m unittest wine_tests.py
 ```
+These tests are integrated through GitHub Actions to run on push or pull request events.
